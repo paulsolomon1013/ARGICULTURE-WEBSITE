@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agricultural</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="navbar">
+  <div class="title">
+    <img src="img1.jpg" alt="Agri World">
+    <span>AgriCore</span>
+  </div>
+  
+    <div class="right-links">
+        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="About.html"><i class="fa-solid fa-paper-plane"></i> About</a></li>
+        <li><a href="#"><i class="fa-solid fa-address-card"></i> Detail</a></li>
+        <li><a href="contact.html"> <i class="fa-solid fa-phone-volume"></i> Contact</a></li>
+      
+    </div> 
+  </div>
+  <div class="left-content">
+
+  <div class="tagline">We are Producing Natural Products</div>
+
+  <h1 id="animated-text">Organic Farming<br>and Agriculture</h1>
+
+  <p class="paragraph">
+    A successful middle-sized farm may generate gross revenue in
+    the range of $500,000 to $5 million annually, depending on the
+    scale and type of operations.
+  </p>
+
+  <div class="buttons">
+    <button class="btn primary"><a href="About.html">Discover More</a></button>
+    <button class="btn outline">See All Service →</button>
+  </div>
+</div>
+ 
+  <div class="content">
+    <h2>Intro About Agri</h2>
+    <p>
+      Agriculture is the backbone of many economies and plays a vital role in sustaining human life. It involves the<span> cultivation of crops, rearing of animals, and production of food and raw materials</span>. With advancements in technology, modern agriculture has become more efficient and environmentally conscious. Sustainable farming practices are essential to ensure food security for future generations.
+    </p>
+    <p class="para">Agriculture, encompassing the cultivation of crops and rearing of livestock, is a fundamental human activity. It's <span>the science and art</span> of cultivating the soil, growing crops, and raising livestock to provide food, fiber, and other essential resources. Agriculture plays a vital role in human societies, from providing sustenance to driving economies. </p>
+  </div>
+ <center><img  class="image"src="img3.png" ></center>
+ <div class="agribot">
+  <h1>What is AgriBot</h1>
+  <p><span>AgriBot is an AI-powered chatbot</span> designed to assist farmers with various agricultural tasks and challenges. It utilizes machine learning, natural language processing (NLP), and potentially IoT integration to provide real-time support and information. AgriBot aims to bridge the gap in accessing timely and accurate agricultural information, especially in areas with limited internet access. </p>
+</div>
+<div class="image-slider">
+  <div class="slide-track">
+  <img class="slide-image active" src="imgbot1.jpeg" alt="Slide 1">
+  <img class="slide-image" src="agribot4.webp" alt="Slide 2">
+  <img class="slide-image" src="agribot5.webp" alt="Slide 3">
+</div>
+</div>
+ <script>
+  const img = document.querySelector('.image');
+
+  setInterval(() => {
+    img.classList.add('animate-3d');
+
+    setTimeout(() => {
+      img.classList.remove('animate-3d');
+    }, 2000);
+
+  }, 5000); 
+
+  const text = "Organic Farming and Agriculture";
+  const h1 = document.getElementById("animated-text");
+  h1.innerHTML = "";
+
+  let i = 0;
+  function typeLetter() {
+    if (i < text.length) {
+      const char = text[i] === " " ? "&nbsp;" : text[i]; 
+      h1.innerHTML += char;
+      i++;
+      setTimeout(typeLetter, 100);
+    }
+  }
+
+  typeLetter();
+
+  const leftContent = document.querySelector('.left-content');
+
+  const bgImages = [
+    'url("imageindex2.jpg")',
+    'url("imgindex7.webp")',
+    'url("imageindex3.jpg")',
+    'url("dan.jpg")',
+    'url("daniel.jpg")',
+  ];
+
+  let current = 0;
+
+  function updateLeftContentBg() {
+    leftContent.style.backgroundImage = bgImages[current];
+    current = (current + 1) % bgImages.length;
+  }
+
+  updateLeftContentBg();
+
+  setInterval(updateLeftContentBg, 1000); 
+
+  const imageSlides = document.querySelectorAll('.slide-image');
+  let imgIndex = 0;
+
+  const slideTrack = document.querySelector('.slide-track');
+  const slideImages = document.querySelectorAll('.slide-image');
+  const totalSlides = slideImages.length;
+  let slideIndex = 0;
+
+  function moveSlide() {
+    slideIndex = (slideIndex + 1) % totalSlides;
+    slideTrack.style.transform = `translateX(-${slideIndex * 100}%)`;
+  }
+
+  setInterval(moveSlide, 3000);
+</script>
+    
+</body>
+</html>

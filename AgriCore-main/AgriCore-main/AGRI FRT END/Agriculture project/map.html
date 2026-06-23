@@ -1,0 +1,831 @@
+<!doctype html>
+
+<html
+  lang="en"
+  class="light-style layout-menu-fixed layout-compact"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="../assets/"
+  data-template="vertical-menu-template-free"
+  data-style="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title> HTML:ORIGIN OF HTML</title>
+
+    <meta name="description" content="" />
+
+   <link rel="stylesheet" href="algorithm.css">
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+
+    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+
+     <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
+
+    <script src="../assets/vendor/js/helpers.js"></script>
+   <script src="../assets/js/config.js"></script>
+  </head>
+  <style>
+
+    h5
+    {
+        font-weight: bold;
+    }
+    .content {
+        padding: 10px;
+    }
+     .content-heading {
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+     .sub-heading {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 30px;
+    }
+     .definition, .example {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 5px;
+    }
+     .definition {
+        background-color: #f8f9fa;
+    }
+     .example {
+        background-color: #e2e6ea;
+        position: relative;
+    }
+     pre {
+        background-color: #e2e6ea;
+        padding: 10px;
+        border-radius: 5px;
+        overflow: auto;
+    }
+    .code-example {
+        font-family: 'Fira Code', 'Source Code Pro', 'JetBrains Mono', Monaco, Menlo, Consolas, monospace;
+        font-size: 1.1rem;
+        color: #333;
+    }
+     .code-example .tag {
+        color: #d73a49;     }
+     .code-example .attribute {
+        color: #6f42c1;  
+    }
+     .code-example .value {
+        color: #005cc5;  
+    }
+     .code-example .text {
+        color: #22863a;  
+    }
+     .code-example .comment {
+        color: #6a737d;  
+    }
+     .copy-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+            border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        }
+     .copy-btn:hover {
+        background-color: #0056b3;
+    }
+     @media (max-width: 768px) {
+        .content-heading {
+            font-size: 24px;
+        }
+         .sub-heading {
+            font-size: 20px;
+        }
+    }
+    
+    button {
+        background-color: #007bff;
+        color: white;
+        padding: 6px 22px;
+        border: none;
+        border-radius: 20px;
+        font-size: 15px;
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+    }
+     
+    button:hover {
+        background-color: #0056b3;
+    }
+     #nextButton
+    {
+        margin-left: 5px;
+    }
+    #nextButton, #prevButton {
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+    body {
+
+    font-family: 'Poppins', 'Roboto', 'Open Sans', sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    }
+    .copy {
+  
+  --button-bg: #353434;
+  --button-hover-bg: #464646;
+  --button-text-color: #CCCCCC;
+  --button-hover-text-color: #8bb9fe;
+  --button-border-radius: 10px;
+  --button-diameter: 36px;
+  --button-outline-width: 1px;
+  --button-outline-color: rgb(141, 141, 141);
+  
+  --tooltip-bg: #f4f3f3;
+  --toolptip-border-radius: 4px;
+  --tooltip-font-family: Menlo, Roboto Mono, monospace;
+  --tooltip-font-size: 12px;
+  --tootip-text-color: rgb(50, 50, 50);
+  --tooltip-padding-x: 7px;
+  --tooltip-padding-y: 7px;
+  --tooltip-offset: 8px;
+  --tooltip-transition-duration: 0.3s;
+}
+
+.copy {
+  box-sizing: border-box;
+  width: var(--button-diameter);
+  height: var(--button-diameter);
+  border-radius: var(--button-border-radius);
+  background-color: var(--button-bg);
+  color: var(--button-text-color);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+       
+}
+
+.tooltip {
+  position: absolute;
+  opacity: 0;
+  visibility: 0;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font: var(--tooltip-font-size) var(--tooltip-font-family);
+  color: var(--tootip-text-color);
+  background: var(--tooltip-bg);
+  padding: var(--tooltip-padding-y) var(--tooltip-padding-x);
+  border-radius: var(--toolptip-border-radius);
+  pointer-events: none;
+  transition: all var(--tooltip-transition-duration) cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.tooltip::before {
+  content: attr(data-text-initial);
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: calc(var(--tooltip-padding-y) / 2 * -1);
+  width: var(--tooltip-padding-y);
+  height: var(--tooltip-padding-y);
+  background: inherit;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  z-index: -999;
+  pointer-events: none;
+}
+
+.copy svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.checkmark {
+  display: none;
+}
+
+
+
+.copy:hover .tooltip,
+.copy:focus:not(:focus-visible) .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: calc((100% + var(--tooltip-offset)) * -1);
+}
+
+.copy:focus:not(:focus-visible) .tooltip::before {
+  content: attr(data-text-end);
+}
+
+.copy:focus:not(:focus-visible) .clipboard {
+  display: none;
+}
+
+.copy:focus:not(:focus-visible) .checkmark {
+  display: block;
+}
+
+.copy:hover,
+.copy:focus {
+  background-color: var(--button-hover-bg);
+}
+
+.copy:active {
+  outline: var(--button-outline-width) solid var(--button-outline-color);
+}
+
+.copy:hover svg {
+  color: var(--button-hover-text-color);
+}
+     h1, h2 {
+    color: #333;
+    }
+     .code-example {
+    background-color: #272c34;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    }
+     .keyword {
+    color: #66d9ef; 
+    }
+     .header {
+    color: #f92672; 
+    }
+     .function {
+    color: #a6e22e; 
+    }
+     .string {
+    color: #e6db74; 
+    }
+     .number {
+    color: #ae81ff; 
+    }
+    .example {
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .code-example {
+    background-color: #1e1e1e;
+    color: #dcdcdc;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+
+ 
+ }
+  .ex{
+    color:white;
+  }
+
+  .keyword {
+    color: #569cd6;
+  }
+
+  .number {
+    color: #b5cea8;
+  }
+
+  .function {
+    color: #dcdcaa;
+  }
+
+  .comment {
+    color: #6a9955;
+  }
+
+  .copy-btn {
+    background-color: #007acc;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .copy-btn:hover {
+    background-color: #005a9e;
+  }
+
+  .btn-primary {
+    background-color: #007acc;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background-color: #005a9e;
+  }
+
+  .compiler {
+    width: 100%;
+    height: 400px;
+    border: none;
+    display: none; 
+    margin-top: 10px;
+  }
+ </style>
+    <style>
+    
+    button {
+               background-color: #007bff;
+               color: white;
+               padding: 6px 15px;
+               border: none;
+               border-radius: 20px;
+               font-size: 15px;
+               cursor: pointer;
+               font-family: 'Poppins', sans-serif;
+           }
+            
+           button:hover {
+               background-color: #0056b3;
+           }
+            
+           .compiler, .compiler1, .compiler2, .compiler3, .compiler4, .compiler5, .compiler6, .compiler7, .compiler8, .compiler9, .compiler10 {
+               display: none; 
+               border-radius: 15px;
+               padding: 5px;
+               width: 100%;
+               height: 400px;
+               border: 1px solid #ccc;
+               margin-top: 10px;
+           }
+            
+           .disable-btn {
+               background-color: #dc3545;
+               color: white;
+           }
+            
+           .disable-btn:hover {
+               background-color: #c82333;
+           }
+ </style>
+  <body>
+    
+  
+    <div class="layout-wrapper layout-content-navbar">
+      <div class="layout-container">
+        
+        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+          <div class="app-brand demo">
+            <a target="_blank" href="https://cadibal.com/" class="app-brand-link">
+              <img src="../assets/img/logo/logo.png" width="70px" alt="cadibal icon">
+              <span class="app-brand-text demo menu-text fw-bold ms-2">Cadibal</span>
+            </a>
+
+            <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+              <i class="bx bx-chevron-left bx-sm d-flex align-items-center justify-content-center"></i>
+            </a>
+          </div>
+
+          <div class="menu-inner-shadow"></div>
+
+
+             <ul class="menu-inner py-1">
+            
+            <li class="menu-header small text-uppercase ">
+              <span class="menu-header-text">Concept of HTML</span>
+            </li>
+            <li class="menu-item active open">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                          <div class="text-truncate" data-i18n="Dashboards">Introduction of HTML</div>
+                        </a>
+                        
+             
+              <ul class="menu-sub  ">
+      
+           
+                <li class="menu-item active ">
+                <a href="Origin of HTML.html" class="menu-link">
+                  <div class="text-truncate" data-i18n="Analytics">Origin of HTML </div>
+                </a>
+              </li>
+              <li class="menu-item ">
+                <a href="What is HTML.html" class="menu-link">
+                  <div class="text-truncate" data-i18n="Analytics">What is HTML ?</div>
+                </a>
+              </li>
+             
+              <li class="menu-item ">
+                <a href="HTML elements.html" class="menu-link">
+                  <div class="text-truncate" data-i18n="Analytics">Elements of HTML</div>
+                </a>
+              </li>
+              <li class="menu-item ">
+                  <a href="HTML paragraph.html" class="menu-link">
+                    <div class="text-truncate" data-i18n="Analytics"> Paragraph in HTML</div>
+                  </a>
+                  <li class="menu-item ">
+                      <a href="HTML heading.html" class="menu-link">
+                        <div class="text-truncate" data-i18n="Analytics"> Headings of HTML</div>
+                      </a>
+                    </li>
+                </li>
+              <li class="menu-item ">
+                <a href="HTML formating.html" class="menu-link">
+                  <div class="text-truncate" data-i18n="Analytics">Formats in HTML</div>
+                </a>
+              </li>
+              <li class="menu-item  ">
+                <a href="HTML Attributes.html" class ="menu-link">
+                  <div class="text-truncate" data-i18n="Analytics">Attributes in HTML</div>
+                </a>
+                 </li>
+                
+                <li class="menu-item ">
+                  <a href="HTML Quotation.html" class="menu-link">
+                    <div class="text-truncate" data-i18n="Analytics"> Quotation in HTML</div>
+                  </a>
+                </li>
+                <li class="menu-item ">
+                  <a href="HTML comments.html" class="menu-link">
+                    <div class="text-truncate" data-i18n="Analytics">Comments in HTML</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          <li class="menu-item  ">
+            <a href="javascript:void(0)" class="menu-link menu-toggle">
+                          <div class="text-truncate" data-i18n="Layouts">Concept of CSS in HTML</div>
+            </a>
+          
+            <ul class="menu-sub  ">
+
+              <li class="menu-item ">
+                <a href="HTML Colors.html" class="menu-link">
+                  <div class="text-truncate" data-i18n="Without menu">Colors in HTML</div>
+                </a>
+              </li>
+              <li class="menu-item ">
+                  <a href="HTML Style.html" class="menu-link">
+                    <div class="text-truncate" data-i18n="Analytics">Styles in HTML</div>
+                  </a>
+                </li>
+              <li class="menu-item">
+                <a href="HTML Links.html" class="menu-link">
+                  <div class="text-truncate" data-i18n="Without navbar">Links in HTML</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                  <a href="HTML blockline&inline.html" class="menu-link">
+                    <div class="text-truncate" data-i18n="Analytics">Blockline & Inline of HTML</div>
+                  </a>
+                </li>
+                <li class="menu-item ">
+                  <a href="HTML div.html" class="menu-link">
+                    <div class="text-truncate" data-i18n="Analytics"> HTML div</div>
+                  </a>
+                </li>
+          
+              <li class="menu-item ">
+                <a href="HTML Images.html" class="menu-link">
+                  <div class="text-truncate" data-i18n="Analytics">Images in HTML</div>
+                </a>
+              </li>
+              <li class="menu-item ">
+                <a href="HTML Class.html" class="menu-link">
+                  <div class="text-truncate" data-i18n="Analytics">Class in HTML</div>
+                </a>
+              </li>
+                <li class="menu-item ">
+                  <a href="HTML Id.html" class="menu-link">
+                    <div class="text-truncate" data-i18n="Analytics">ID in HTML</div>
+                  </a>
+                </li>
+                  <li class="menu-item ">
+                    <a href="HTML iframe.html" class="menu-link">
+                      <div class="text-truncate" data-i18n="Analytics">Iframe in HTML</div>
+                    </a>
+                  </li>
+                  <li class="menu-item ">
+                      <a href="HTML filepath.html" class="menu-link">
+                        <div class="text-truncate" data-i18n="Analytics">Filepath in HTML</div>
+                      </a>
+                    </li>
+                   
+                    <li class="menu-item ">
+                      <a href="HTML layout.html" class="menu-link">
+                        <div class="text-truncate" data-i18n="Analytics">Layout of HTML</div>
+                      </a>
+                    </li>
+                    <li class="menu-item ">
+                      <a href="HTML responsive.html" class="menu-link">
+                        <div class="text-truncate" data-i18n="Analytics">Responsive in HTML</div>
+                      </a>
+                    </li>
+                   
+                    <li class="menu-item ">
+                      <a href="HTML entities.html" class="menu-link">
+                        <div class="text-truncate" data-i18n="Analytics">HTML Entities</div>
+                      </a>
+                    </li>
+                    <li class="menu-item ">
+                      <a href="HTML symbol.html" class="menu-link">
+                        <div class="text-truncate" data-i18n="Analytics"> HTML Symbols</div>
+                      </a>
+                    </li>
+                    
+
+                    <li class="menu-item ">
+                      <a href="HTML javascript.html" class="menu-link">
+                        <div class="text-truncate" data-i18n="Analytics">Javascript in HTML</div>
+
+                      </a>
+                     </li>
+                     <li class="menu-item ">
+                      <a href="html url encode.html" class="menu-link">
+                        <div class="text-truncate" data-i18n="Analytics">HTML URl ENCODE</div>
+                      </a>
+                    </li>
+                    <li class="menu-item ">
+                      <a href="html vs xhtml.html" class="menu-link">
+                        <div class="text-truncate" data-i18n="Analytics">HTML vs XHTML</div>
+                      </a>
+                    </li>
+            </ul>
+          </li>
+
+                
+
+          
+          <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">HTML FORMS</span>
+          </li>
+                   <li class="menu-item ">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                         <div class="text-truncate" data-i18n="Account Settings">Forms & Heads</div>
+            </a>
+            <ul class="menu-sub">
+              <li class="menu-item">
+                <a href="HTML forms.html" class="menu-link">
+                  <div class="text-truncate" data-i18n="Account">Forms in HTML</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="HTML favicon.html" class="menu-link">
+                  <div class="text-truncate" data-i18n="Notifications">Favicon in HTML</div>
+                </a>
+              </li>
+              <li class="menu-item ">
+                  <a href="html form attribute.html" class="menu-link">
+                    <div class="text-truncate" data-i18n="Analytics">Form Attributes in HTML </div>
+                  </a>
+                </li>
+                <li class="menu-item ">
+                  <a href="HTML form elements.html" class="menu-link">
+                    <div class="text-truncate" data-i18n="Analytics">Form Elements in HTML </div>
+                  </a>
+                </li>
+                <li class="menu-item ">
+                  <a href="html input types.html" class="menu-link">
+                    <div class="text-truncate" data-i18n="Analytics">Input types in HTML </div>
+                  </a>
+                </li>
+                <li class="menu-item ">
+                  <a href="html input attributes.html" class="menu-link">
+                    <div class="text-truncate" data-i18n="Analytics">Input attributes in HTML</div>
+                  </a>
+                </li>
+              <li class="menu-item ">
+                  <a href="HTML head.html" class="menu-link">
+                    <div class="text-truncate" data-i18n="Analytics">HTML head</div>
+                  </a>
+                </li>
+              <li class="menu-item">
+                <a href="HTML page title.html" class="menu-link">
+                  <div class="text-truncate" data-i18n="Connections">Page title of HTML</div>
+                </a>
+              </li>
+                                     </ul>
+          </li>
+          <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">HTML TABLES</span>
+          </li>
+          <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                         <div class="text-truncate" data-i18n="Authentications">Tables & List</div>
+            </a>
+            <ul class="menu-sub">
+              <li class="menu-item">
+                <a href="HTML table.html" class="menu-link" target="_blank">
+                  <div class="text-truncate" data-i18n="Basic">Tables in HTML </div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="HTML lists.html" class="menu-link" target="_blank">
+                  <div class="text-truncate" data-i18n="Basic">Lists in HTML</div>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+
+          <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">HTML PAGES & Graphics</span>
+          </li>
+         
+          <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                          <div class="text-truncate" data-i18n="Form Elements">HTML Pages </div>
+            </a>
+            <ul class="menu-sub">
+              <li class="menu-item">
+                <a href="HTMLsementic elements.html" class="menu-link">
+                  <div class="text-truncate" data-i18n="Basic Inputs">Sementic Elements in HTML</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="HTML media.html" class="menu-link">
+                  <div class="text-truncate" data-i18n="Input groups">Media of HTML</div>
+                </a>
+              </li>
+              <li class="menu-item ">
+                  <a href="html youtube.html" class="menu-link">
+                    <div class="text-truncate" data-i18n="Analytics">HTML Youtube</div>
+                  </a>
+                </li>
+                <li class="menu-item ">
+                  <a href="html plugin.html" class="menu-link">
+                    <div class="text-truncate" data-i18n="Analytics">HTML plugin</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="html canvas.html" class="menu-link">
+                    <div class="text-truncate" data-i18n="Basic Inputs">Canvas in HTML</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="html svg.html" class="menu-link">
+                    <div class="text-truncate" data-i18n="Basic Inputs">SVG in HTML</div>
+                  </a>
+                </li>
+              <li class="menu-item">
+                <a href="HTML API.html" class="menu-link">
+                  <div class="text-truncate" data-i18n="Input groups">API in HTML</div>
+                </a>
+              </li>
+             
+            </ul>
+          </li>
+
+         
+
+              </ul>
+              
+      </aside>
+      <div class="layout-page">
+        <nav
+          class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+          id="layout-navbar">
+          <div class="layout-menu-toggle navbar-nav align-items-xl-center me-4 me-xl-0 d-xl-none">
+            <a class="nav-item nav-link px-0 me-xl-6" href="javascript:void(0)">
+              <i class="bx bx-menu bx-md"></i>
+            </a>
+          </div>
+
+          <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+            
+            <div class="navbar-nav align-items-center">
+              <div class="nav-item d-flex align-items-center">
+                <i class="bx bx-search bx-md"></i>
+                <input
+                  type="text"
+                  class="form-control border-0 shadow-none ps-1 ps-sm-2"
+                  placeholder="Search..."
+                  aria-label="Search..." />
+              </div>
+            </div>
+            <ul class="navbar-nav flex-row align-items-center ms-auto">
+
+              <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                <a
+                  class="nav-link dropdown-toggle hide-arrow p-0"
+                  href="javascript:void(0);"
+                  data-bs-toggle="dropdown">
+                                </a>
+                        </li>
+         
+            </ul>
+          </div>
+        </nav>  
+          <div class="content-wrapper">
+            <div id="content">
+              
+              <div>
+                <h3 class="sub-heading">History of HTML</h3>
+                <div class="definition">
+                <h5 style="font-weight:bold;">Definition</h5>
+                    <p>HTML (Hypertext Markup Language) was first proposed by Tim Berners-Lee in 1991 while working at CERN. The first version consisted of 18 elements, primarily focused on scientific documentation. Over the years, HTML has evolved through various versions, with significant updates like HTML4 in 1997, XHTML in 2000, and the current standard HTML5, which was finalized in 2014.</p>
+                <div class="definition">
+                    <h5>Evolution of HTML</h5>
+                    <p>The evolution of HTML has been driven by the need for richer content and better web standards. After HTML 4, which introduced features like frames and stylesheets, the rise of mobile devices and multimedia led to the development of HTML5. This version brought significant enhancements, including:</p>
+                    <ul>
+                        <li><strong>New Elements:</strong> HTML5 introduced new semantic elements such as <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;article&gt;</code>, and <code>&lt;section&gt;</code>, making it easier to structure web pages.</li>
+                        <li><strong>Audio and Video Support:</strong> HTML5 natively supports audio and video playback with the <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> tags, eliminating the need for third-party plugins like Flash.</li>
+                        <li><strong>Canvas Element:</strong> The <code>&lt;canvas&gt;</code> element allows for dynamic, scriptable rendering of 2D shapes and bitmap images, enabling rich graphics and interactive applications.</li>
+                        <li><strong>APIs and Connectivity:</strong> HTML5 introduced various APIs such as the Geolocation API, Web Storage, and the Web Workers API, allowing for more interactive and responsive web applications.</li>
+                    </ul>
+                    <br>
+                    <h5>Future of HTML</h5>
+                    <p>As web technologies continue to evolve, HTML will likely keep adapting to meet new demands. The ongoing development of HTML standards through organizations like the W3C ensures that HTML remains a crucial part of web development, focusing on accessibility, interoperability, and usability.</p>
+                </div>
+            </div>
+            <div class="algorithm-list"> <h5 class="heading-algorithm">Algorithm :-</h5> <li> <span style="font-family:'Times New Roman', Times, serif; color: blue;">Step 1: </span>Start</li> <li> <span style="font-family:'Times New Roman', Times, serif; color: blue;">Step 2: </span>Create an HTML document using the <code>&lt;!DOCTYPE html&gt;</code> declaration.</li> <li> <span style="font-family:'Times New Roman', Times, serif; color: blue;">Step 3: </span>Inside the <code>&lt;html&gt;</code> tag, add a <code>&lt;head&gt;</code> section with a <code>&lt;title&gt;</code> tag for the document title.</li> <li> <span style="font-family:'Times New Roman', Times, serif; color: blue;">Step 4: </span>In the <code>&lt;body&gt;</code> section, include a heading tag (<code>&lt;h1&gt;</code>) and a paragraph (<code>&lt;p&gt;</code>) with the desired content.</li> <li> <span style="font-family:'Times New Roman', Times, serif; color: blue;">Step 5: </span>Stop</li> </div>
+                <div class="example">
+                  
+                    <h5 class="ex">Example</h5>
+                    <button class="copy" onclick="copyToClipboard(this)">
+                      <span data-text-end="Copied!" data-text-initial="Copy to clipboard" class="tooltip"></span>
+                      <span>
+                        <svg xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 6.35 6.35" y="0" x="0" height="20" width="20" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" class="clipboard">
+                          <g>
+                            <path fill="currentColor" d="M2.43.265c-.3 0-.548.236-.573.53h-.328a.74.74 0 0 0-.735.734v3.822a.74.74 0 0 0 .735.734H4.82a.74.74 0 0 0 .735-.734V1.529a.74.74 0 0 0-.735-.735h-.328a.58.58 0 0 0-.573-.53zm0 .529h1.49c.032 0 .049.017.049.049v.431c0 .032-.017.049-.049.049H2.43c-.032 0-.05-.017-.05-.049V.843c0-.032.018-.05.05-.05zm-.901.53h.328c.026.292.274.528.573.528h1.49a.58.58 0 0 0 .573-.529h.328a.2.2 0 0 1 .206.206v3.822a.2.2 0 0 1-.206.205H1.53a.2.2 0 0 1-.206-.205V1.529a.2.2 0 0 1 .206-.206z"></path>
+                          </g>
+                        </svg>
+                        <svg xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 24 24" y="0" x="0" height="18" width="18" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" class="checkmark">
+                          <g>
+                            <path data-original="#000000" fill="currentColor" d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"></path>
+                          </g>
+                        </svg>
+                      </span>
+                      </button>
+                    
+<pre id="code-block" class="code-example">&lt;!DOCTYPE html&gt;<br>&lt;<span class="tag">html</span>&gt;<br>&lt;<span class="tag">head</span>&gt;&lt;<span class="tag">title</span>&gt;<span class="text">HTML 1.0 Document</span>&lt;/<span class="tag">title</span>&gt;&lt;/<span class="tag">head</span>&gt;<br>&lt;<span class="tag">body</span>&gt;<br>&lt;<span class="tag">h1</span>&gt;<span class="text">This is a Heading from HTML 1.0</span>&lt;/<span class="tag">h1</span>&gt;<br>&lt;<span class="tag">p</span>&gt;<span class="text">HTML was invented by Tim Berners-Lee.</span>&lt;/<span class="tag">p</span>&gt;<br>&lt;/<span class="tag">body</span>&gt;<br>&lt;/<span class="tag">html</span>&gt;</pre>
+                    <button class="btn btn-primary" onclick="toggleCompiler()">Simulate it</button>
+                    <iframe class="compiler" src="https://onecompiler.com/embed/html?hideNew=true&hideLanguageSelection=true&hideFullscreen=true&hideReset=true&theme=light"></iframe>
+                   
+                
+                </div>
+               
+                <!-- compiler -->
+                <iframe class="compiler" src="https://onecompiler.com/embed/html?hideNew=true&hideLanguageSelection=true&hideFullscreen=true&hideReset=true&theme=light">
+                </iframe>
+                <!-- end -->
+                </div>
+                
+              <a href="What is HTML.html">
+                <button id="nextButton" style="float: right; margin-right: 1%;">Next&nbsp;&nbsp;<i class="fa-solid fa-right-long"></i></button>
+              </a>
+            
+            </div>
+        
+              </div>
+              </div>
+
+    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../assets/vendor/js/bootstrap.js"></script>
+    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="../assets/vendor/js/menu.js"></script>
+
+    <script src="/cadibal portal/assets/js/compiler.js"></script>
+    <script src="/cadibal portal/assets/js/copy.js" ></script>
+
+
+     <script src="/cadibal portal/assets/js/compiler.js"></script>
+    <script src="/cadibal portal/assets/js/copy.js" ></script>
+
+    <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+
+    
+    <script src="../assets/js/main.js"></script>
+
+    <script src="../assets/js/dashboards-analytics.js"></script>
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
+</html>

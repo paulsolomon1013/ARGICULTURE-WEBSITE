@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agricultural Functions</title>
+  <link rel="stylesheet" href="about.css" />
+</head>
+<body>
+
+  <h1 class="title">Agricultural Functions</h1>
+
+  <div class="grid-container"> <div class="grid-item"  onclick="showFunction('Plowing')"> <img src="Plowing.jpg" alt="Plowing"> <span>Plowing</span></div>
+    <div class="grid-item"  onclick="showFunction('Sowing')"><img src="Sowing.webp" alt="Sowing"><span>Sowing</span></div>
+    <div class="grid-item" onclick="showFunction('Irrigation')"><img  src="Irrigiation.jpg"alt="Irrigation"> <span>Irrigation</span></div>
+    <div class="grid-item" onclick="showFunction('Fertilizing')"><img src="Fertilization.webp" alt="Fertilizing"> <span>Fertilizing</span></div>
+    <div class="grid-item" onclick="showFunction('Harvesting')"> <img src="Harvesting.jpg" alt="Harvesting"> <span>Harvesting</span> </div>
+    <div class="grid-item" onclick="showFunction('Storage')"> <img src="Storage.jpg" alt="Storage"><span>Storage</span></div>
+    <div class="grid-item" onclick="showFunction('Weeding')"><img src="Weeding.avif" alt="Weeding"><span>Weeding</span></div>
+    <div class="grid-item" onclick="showFunction('Pest control')"><img src="Pestcontrol.jpg" alt="Pest Control"><span>Pest Control</span></div>
+    <div class="grid-item" onclick="showFunction('Crop Rotation')"><img src="Croprotation.jpg" alt="Crop Rotation"><span>Crop Rotation</span></div>
+    <div class="grid-item" onclick="showFunction('Land Preparation')"><img src="Land.webp" alt="Land Preparation"><span>Land Preparation</span></div>
+    <div class="grid-item" onclick="showFunction('Transplanting')"><img src="Transplanting.webp" alt="Transplanting"><span>Transplanting</span></div>
+    <div class="grid-item" onclick="showFunction('Mulching')"><img src="Mulching.jpg" alt="Mulching"><span>Mulching</span></div>
+    <div class="grid-item" onclick="showFunction('Threshing')"><img src="thresing.jpg" alt="Threshing"><span>Threshing</span></div>
+    <div class="grid-item" onclick="showFunction('Marketing')"><img src="Marketing.jpg" alt="Marketing"><span>Marketing</span></div>
+    <div class="grid-item" onclick="showFunction('Composting')"><img src="Composting.jpg" alt="Composting"><span>Composting</span></div>
+    <div class="grid-item" onclick="showFunction('Nursery preparation')"><img src="nursery.webp" alt="Nursery preparation"><span>Nursery preparation</span></div>
+    <div class="grid-item" onclick="showFunction('Soil Testing')"><img src="soil.jpg" alt="Soil Testing"><span>Soil Testing</span></div>
+    <div class="grid-item" onclick="showFunction('Mechanization')"><img src="Mechanization.jpg" alt="Mechanization"><span>Mechanization</span></div>
+  </div>
+  <div id="info-box"></div>
+
+<div id="chatbot-box" style="display: none; margin-top: 20px; max-width: 800px; margin-left: auto; margin-right: auto;">
+  <iframe
+    src="https://example.com/your-chatbot"  <!-- Replace this with your actual chatbot URL -->
+    style="width: 100%; height: 500px; border: none; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
+    title="Chatbot"
+    allow="microphone; clipboard-write"
+  ></iframe>
+</div>
+  <script>
+    const descriptions = {
+      "Plowing": {
+        text: "Plowing involves turning over the upper layer of soil to prepare it for sowing This is the process of turning over the upper layer of the soil to bring fresh nutrients to the surface. It helps loosen the soil, remove weeds, and improve aeration and moisture retention.",
+        link: "https://en.wikipedia.org/wiki/Plough"
+      },
+      "Sowing": {
+        text: "Sowing is the process of planting seeds...Sowing is the process of placing seeds into the soil at the right depth and spacing. This can be done manually or with machines depending on the crop and field size.",
+        link: "https://en.wikipedia.org/wiki/Sowing"
+      },
+      "Irrigation": {
+        text: "Irrigation is the artificial application of water...Regular and timely watering is essential for healthy crop growth. Irrigation methods include canal, drip, sprinkler, and traditional systems.",
+        link: "https://en.wikipedia.org/wiki/Irrigation"
+      },
+      "Fertilizing": {
+        text: "Fertilizing adds essential nutrients...Nutrients like nitrogen, phosphorus, and potassium are added to the soil using organic or chemical fertilizers to promote healthy crop development.",
+        link: "https://en.wikipedia.org/wiki/Fertilizer"
+      },
+      "Harvesting": {
+        text: "Harvesting is the process of collecting mature crops...This is the process of collecting mature crops from the field. It must be done at the right time to ensure quality and yield.",
+        link: "https://en.wikipedia.org/wiki/Harvest"
+      },
+      "Storage": {
+        text: "Storage involves preserving harvested crops...After harvesting, crops are stored in appropriate conditions—dry, cool, and pest-free environments—to prevent spoilage and loss.",
+        link: "https://en.wikipedia.org/wiki/Food_storage"
+      },
+      "Weeding": {
+        text: "Weeding is the removal of unwanted plants...Weeds compete with crops for water and nutrients. Manual, mechanical, or chemical methods are used to remove them at various crop stages.",
+        link: "https://en.wikipedia.org/wiki/Weed_control"
+      },
+      "Pest Control": {
+        text: "Pest control involves managing insects...To protect crops from pests and diseases, farmers use biopesticides, chemical pesticides, or integrated pest management (IPM) strategies.",
+        link: "https://en.wikipedia.org/wiki/Pest_control"
+      },
+      "Crop Rotation": {
+        text: "Crop rotation is growing different crops...To maintain soil fertility and reduce disease buildup, different crops are planted in the same field in successive seasons.",
+        link: "https://en.wikipedia.org/wiki/Crop_rotation"
+      },
+      "Land Preparation": {
+        text: "Land preparation includes plowing, leveling...Before any cultivation begins, the land must be cleared and leveled. This includes removing weeds, stones, and previous crop residues to ensure a smooth seedbed.",
+        link: "https://en.wikipedia.org/wiki/Tillage"
+      },
+      "Transplanting": {
+        text: "Transplanting is the process of moving young plants...In crops like rice, where initial growth happens in nurseries, healthy seedlings are transplanted into the field to continue their growth.",
+        link: "https://en.wikipedia.org/wiki/Transplanting_(agriculture)"
+      },
+      "Mulching": {
+        text: "Mulching involves covering the soil...Mulching involves covering the soil surface with organic or synthetic materials to retain moisture, reduce weed growth, and maintain soil temperature.",
+        link: "https://en.wikipedia.org/wiki/Mulch"
+      },
+      "Threshing": {
+        text: "Threshing separates grains or seeds...Threshing is the process of separating grains or seeds from the harvested crop's stalks and husks. This step typically follows harvesting and is crucial for obtaining clean, usable produce.",
+        link: "https://en.wikipedia.org/wiki/Threshing"
+      },
+      "Marketing": {
+        text: "Marketing refers to the process of promoting and selling...Marketing is the process of selling and distributing agricultural products to consumers, retailers, or processing units. It plays a vital role in ensuring farmers get fair prices and consumers receive quality produce.",
+        link: "https://en.wikipedia.org/wiki/Agricultural_marketing"
+      },
+      "Composting": {
+        text: "Composting converts organic waste into soil conditioner...Composting is the natural process of recycling organic waste—like crop residues, kitchen scraps, and animal manure—into nutrient-rich fertilizer known as compost.",
+        link: "https://en.wikipedia.org/wiki/Compost"
+      },
+      "Nursery preparation": {
+        text: "Nursery preparation is creating a protected area...For crops like paddy and vegetables, seeds are first sown in a nursery. Once the seedlings grow to a suitable height, they are transplanted to the main field.",
+        link: "https://en.wikipedia.org/wiki/Nursery_(horticulture)"
+      },
+      "Soil Testing": {
+        text: "Soil testing determines nutrient content and pH...Soil samples are collected and tested to determine pH levels, nutrients, and soil texture. This helps decide the type and amount of fertilizers and crops suitable for the land.",
+        link: "https://en.wikipedia.org/wiki/Soil_test"
+      },
+      "Mechanization": {
+        text: "Mechanization uses machinery in farming...Modern tools and machinery like tractors, seed drills, harvesters, and threshers are used to improve efficiency and reduce labor.",
+        link: "https://en.wikipedia.org/wiki/Agricultural_mechanization"
+      }
+    };
+
+    function showFunction(label) {
+      const data = descriptions[label] || { text: "Description not available.", link: "#" };
+      const box = document.getElementById("info-box");
+      const chatbot = document.getElementById("chatbot-box");
+
+      box.innerHTML = `
+        <div style="
+          margin-top: 30px;
+          padding: 20px;
+          background: #f0f8ff;
+          border-left: 5px solid #4CAF50;
+          border-radius: 12px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          max-width: 800px;
+          margin-left: auto;
+          margin-right: auto;
+          animation: fadeIn 0.5s ease-in-out;
+          font-family: 'Segoe UI', sans-serif;
+          line-height: 1.6;
+        ">
+          <p style="font-size: 18px; color: #333; margin-bottom: 12px;">${data.text}</p>
+          <a href="${data.link}" target="_blank" style="
+            display: inline-block;
+            padding: 8px 14px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+          ">Learn more</a>
+        </div>
+      `;
+     
+  chatbot.style.display = "block";
+
+      box.scrollIntoView({ behavior: "smooth" });
+    }
+
+    
+    document.querySelectorAll('.grid-item').forEach(item => {
+      item.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          const label = item.querySelector('span').innerText.trim();
+          showFunction(label);
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
+

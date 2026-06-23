@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Agriculture Process</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        background-color: #f4f8f0; /* light green background */
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 220px;
+        background-color: #1b4d3e; /* deep green */
+        color: white;
+        padding: 20px;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        overflow-y: auto; /* enables vertical scroll */
+        scrollbar-width: thin; /* for Firefox */
+        scrollbar-color: #88c057 #1b4d3e; /* thumb green, track dark green */
+    }
+
+    .sidebar::-webkit-scrollbar {
+        width: 6px;
+    }
+    .sidebar::-webkit-scrollbar-track {
+        background: #1b4d3e; /* dark green track */
+    }
+    .sidebar::-webkit-scrollbar-thumb {
+        background-color: #88c057; /* leaf green */
+        border-radius: 3px;
+    }
+    .sidebar::-webkit-scrollbar-thumb:hover {
+        background-color: #6fa544; /* darker green on hover */
+    }
+  .sidebar h2 {
+    color: #ffd166;       /* golden yellow */
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 15px;     /* adds spacing from top */
+    padding-top: 10px;    /* extra breathing space */
+}
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .sidebar ul li {
+        padding: 10px 0;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+    .sidebar ul li:hover {
+        background-color: #276749; /* medium green hover */
+        border-radius: 4px;
+    }
+
+    /* Main Content */
+    .main {
+        margin-left: 240px;
+        padding: 20px;
+        flex: 1;
+    }
+
+    .heading-algorithm {
+        font-family: 'Garamond', serif;
+        color: #2f855a; /* deep green heading */
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .algorithm-list {
+        background-color: #fff;
+        color: #000;
+        border-radius: 4px;
+        padding: 20px;
+        list-style: none;
+        border: 1px solid #ccc;
+    }
+    .algorithm-list li {
+        margin: 5px 0;
+        padding: 8px;
+        border-bottom: 1px solid #eee;
+    }
+    .algorithm-list li:last-child {
+        border-bottom: none;
+    }
+</style>
+
+
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <h2>Menu</h2>
+    <ul>
+        <li>🌾 Plowing</li>
+        <li>🌾 Sowing</li>
+        <li>🌾 Irrigation</li>
+        <li>🌾 Fertilizing</li>
+        <li>🌾 Harvesting</li>
+        <li>🌾 Storage</li>
+        <li>🌾 Weeding</li>
+        <li>🌾 Pest Control</li>
+        <li>🌾 Crop Rotation</li>
+        <li>🌾 Land Preparation</li>
+        <li>🌾 Transplanting</li>
+        <li>🌾 Mulching</li>
+        <li>🌾 Threshing</li>
+        <li>🌾 Marketing</li>
+        <li>🌾 Composting</li>
+        <li>🌾 Nursery Preparation</li>
+        <li>🌾 Soil Testing</li>
+        <li>🌾 Mechanization</li>
+    </ul>
+</div>
+
+
+
+
+<script>
+// Optional JS for click effect
+document.querySelectorAll(".sidebar ul li").forEach(item => {
+    item.addEventListener("click", () => {
+        alert(item.textContent + " clicked!");
+    });
+});
+</script>
+
+</body>
+</html>

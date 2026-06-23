@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="contact.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+</head>
+<body>
+  <div class="container">
+    <h1>Let's work together!</h1>
+    <p>Fill out the following form and we will get back to you in the next 24 hours.</p>
+
+    <form id="contactForm">
+      <label for="name">What's your name?</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">What's your email address?</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">What's your phone number?</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <button type="submit">Submit</button>
+    </form>
+  
+ <div id="response"></div>
+  </div>
+  <div class="contact-info">
+  <div class="info-box">
+    <h3><i class="fa-solid fa-phone-volume"></i>  DIAL IN </h3>
+    <p>+91 7604807797</p>
+    <p>+91 9791912016</p>
+    <p>+91 9025367327</p>
+    <p>+91 8940988227</p>
+  </div>
+  <div class="info-box">
+  <h3> <i class="fa-solid fa-address-card"></i> ADDRESS</h3>
+    <p>SHREE VENKATESHWARA HI-TECH<br>
+        ENGINEERING COLLEGE ,<br>
+       GOBI MAIN ROAD , <br>
+        SRI KALAIVANI NAGAR ,<br>
+   OTTHAKKUTHIRAI ,<br>
+         TAMILNADU - 638455 .</p>
+  </div>
+</div>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault(); 
+      const name = document.getElementById('name').value;
+      document.getElementById('response').textContent = `Thanks, ${name}! We will contact you soon.`;
+    });
+  </script>
+</body>
+</html>
